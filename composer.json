@@ -1,0 +1,10 @@
+{
+    "name": "esp/news",
+    "authors": [
+        {
+            "name": "diadji",
+            "email": "diadjindiaye24@gmail.com"
+        }
+    ],
+    "require": {}
+}
