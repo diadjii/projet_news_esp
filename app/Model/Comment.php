@@ -7,6 +7,7 @@ class Comment {
 	private $id;
 	private $content;
 	private $pseudo;
+	private $article_id;
 	private $created_at;
 
 	/**
@@ -77,6 +78,24 @@ class Comment {
 	 */
 	public function setCreatedAt($created_at) {
 		$this->created_at = $created_at;
+
+		return $this;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getArticleId() {
+		return $this->article_id;
+	}
+
+	/**
+	 * @param mixed $article_id
+	 *
+	 * @return self
+	 */
+	public function setArticleId($article_id) {
+		$this->article_id = $article_id;
 
 		return $this;
 	}

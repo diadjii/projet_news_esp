@@ -3,7 +3,9 @@ namespace AppNews\Controller;
 
 use AppNews\DAO\ArticleDAO;
 use AppNews\DAO\CategoryDAO;
+use AppNews\DAO\CommentDAO;
 use AppNews\Model\Article;
+use AppNews\Model\Comment;
 
 /**
  *
@@ -75,5 +77,34 @@ class AppController {
 		$result = $article_dao->findBySlug($slug);
 
 		echo json_encode($result);
+	}
+
+	public function createComment($request) {
+		$pseudo = $request['pseudo'];
+		$content = $request['comment'];
+		$article_id = $request['article_id'];
+
+		$comment_dao = new CommentDAO();
+
+		$comment = new Comment();
+
+		$comment->setPseudo($pseudo);
+		$comment->setContent($content);
+		$comment->setArticleId($article_id);
+
+		if ($comment_dao->create($comment)) {
+			echo true;
+		} else {
+			echo false;
+		}
+	}
+
+	public function getComment($request) {
+		$article_id = $request['id'];
+
+		$comment_dao = new CommentDAO();
+		$res = $comment_dao->findByArticleId($article_id);
+
+		echo json_encode($res);
 	}
 }

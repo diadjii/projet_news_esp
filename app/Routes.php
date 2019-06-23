@@ -51,6 +51,12 @@ class Routes {
 		case '/category/all':
 			$this->controller->getAllCategory();
 			break;
+		case '/comment/create':
+			$this->controller->createComment($_POST);
+			break;
+		case '/comment/all':
+			$this->controller->getComment($_GET);
+			break;
 		default:
 
 			break;
