@@ -58,7 +58,7 @@ class Routes {
 			$this->controller->getComment($_GET);
 			break;
 		default:
-
+			$this->controller->home($_GET);
 			break;
 		}
 	}
