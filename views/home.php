@@ -2,6 +2,7 @@
 <html>
 <head>
     <title></title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 <body>
     <h1>Bonjour les zeros</h1>

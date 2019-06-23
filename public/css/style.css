@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+}
+nav{
+    display: grid;
+    grid-template-columns:20% 60%;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+}
+#admin-title{
+    font-size:40px;
+    text-align: center;
+}
+
+.admin-content{
+    position: absolute;
+    display: grid;
+    grid-template-rows:1fr 1fr ;
+    width:50%;
+}

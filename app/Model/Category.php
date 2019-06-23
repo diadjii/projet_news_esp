@@ -1,12 +1,12 @@
 <?php
-
 namespace AppNews\Model;
-
-class User {
-
+/**
+ *
+ */
+class Category {
 	private $id;
-	private $login;
-	private $password;
+	private $name;
+	private $created_at;
 
 	/**
 	 * @return mixed
@@ -29,17 +29,17 @@ class User {
 	/**
 	 * @return mixed
 	 */
-	public function getLogin() {
-		return $this->login;
+	public function getName() {
+		return $this->name;
 	}
 
 	/**
-	 * @param mixed $login
+	 * @param mixed $name
 	 *
 	 * @return self
 	 */
-	public function setLogin($login) {
-		$this->login = $login;
+	public function setName($name) {
+		$this->name = $name;
 
 		return $this;
 	}
@@ -47,17 +47,17 @@ class User {
 	/**
 	 * @return mixed
 	 */
-	public function getPassword() {
-		return $this->password;
+	public function getCreatedAt() {
+		return $this->created_at;
 	}
 
 	/**
-	 * @param mixed $password
+	 * @param mixed $created_at
 	 *
 	 * @return self
 	 */
-	public function setPassword($password) {
-		$this->password = $password;
+	public function setCreatedAt($created_at) {
+		$this->created_at = $created_at;
 
 		return $this;
 	}
