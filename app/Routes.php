@@ -7,9 +7,11 @@ use AppNews\Controller\AppController;
 class Routes {
 	private $request;
 	private $urls = [];
+	private $controller;
 
 	function __construct() {
 		$this->request = $_SERVER;
+		$this->controller = new AppController();
 	}
 
 	public function get($url, $method) {
@@ -22,20 +24,32 @@ class Routes {
 	}
 
 	private function currentRequest() {
-		$uri = $this->request['REQUEST_URI'];
+		$uri = $this->request['PATH_INFO'];
 
 		switch ($uri) {
 		case '/accueil':
-			AppController::home($_GET);
-			//print_r($this->urls);
+			$this->controller->home($_GET);
+			break;
+		case '/':
+			$this->controller->home($_GET);
+			break;
+		case '/admin':
+			$this->controller->admin($_GET);
 			break;
 		case '/article/create':
-			AppController::createArticle($_POST);
-			//print_r($this->urls);
+			$this->controller->createArticle($_POST);
+			break;
+		case '/article/all':
+			$this->controller->getAllArticles();
+			break;
+		case '/articles':
+			$this->controller->getArticle($_GET);
+			break;
+		case '/article/detail':
+			$this->controller->getArticleDetail($_GET);
 			break;
 		case '/category/all':
-			AppController::getAllCategory();
-			// echo $uri;
+			$this->controller->getAllCategory();
 			break;
 		default:
 

@@ -25,11 +25,19 @@ class ArticleDAO extends DatabaseService {
 		}
 	}
 
-	public function findBySlug() {
+	public function findBySlug($slug) {
+		$pdoStatement = $this->_db->query("SELECT * FROM article where slug = '$slug'");
 
+		return $pdoStatement->fetch(\PDO::FETCH_ASSOC);
 	}
 
 	public function update() {
 
+	}
+
+	public function findAll() {
+		$pdoStatement = $this->_db->query("SELECT * FROM article");
+
+		return $pdoStatement->fetchAll(\PDO::FETCH_ASSOC);
 	}
 }

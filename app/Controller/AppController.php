@@ -9,11 +9,12 @@ use AppNews\Model\Article;
  *
  */
 class AppController {
-	public static function home($request) {
+
+	public function admin($request) {
 		include "../views/admin.php";
 	}
 
-	public static function createArticle($request) {
+	public function createArticle($request) {
 		$title = $request['title'];
 		$categoryId = $request['category-id'];
 		$content = $request['content'];
@@ -38,28 +39,41 @@ class AppController {
 		return str_replace(" ", "_", strtolower($title));
 	}
 
-	public static function getAllCategory() {
+	public function getAllCategory() {
 		$categoryService = new CategoryDAO();
 		// $t = $categoryService->getAll();
 		$result = array();
 
 		try {
-
 			$result = $categoryService->getAll();
 			echo json_encode($result);
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
+	}
 
-		/*try {
+	public function getAllArticles() {
+		$article_dao = new ArticleDAO();
 
-			} catch (\Exception $e) {
-				$result['l'] = $e->getMessage();
-			}
+		$result = $article_dao->findAll();
 
-		*/
+		echo json_encode($result);
+	}
 
-		//echo "ok";
+	public function getArticle($request) {
+		include "../views/detail.php";
+	}
+
+	public function home() {
+		include "../views/home.php";
+	}
+
+	public function getArticleDetail($request) {
+		$article_dao = new ArticleDAO();
+		$slug = $request['title'];
+		// echo $slug;
+		$result = $article_dao->findBySlug($slug);
+
+		echo json_encode($result);
 	}
 }
-?>
