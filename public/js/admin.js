@@ -11,7 +11,6 @@ $(() => {
 
 $("#form-create-article").submit((e) => {
     e.preventDefault();
-   console.log($("#form-create-article").serialize());
 
    $.post("/article/create",$("#form-create-article").serialize()).done(response => {
        console.log(response);

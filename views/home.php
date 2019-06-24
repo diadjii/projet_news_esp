@@ -1,30 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
+    <title>ESP News</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>Articles</h1>
-    <div class="content">
-        <div id="article">
-            <a class="article">
-                <h2 class="article-title">Le Jour où tout a changé</h2>
-                <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="article-bottom">
-                    <img src="icons/comment.svg" width="20px" height="20px">
-                    <small class="article-date">écrit le 22-06-19 </small>
-                </div>
-            </a>
-        </div>
-        <div id="categorie"></div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.jpg" style="max-width:30px;" class="rounded-circle"> ESP News
+        </a>
     </div>
-    <script type="text/javascript" src="js/home.js"></script>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="my-4">Articles et Infos
+                <small>à chaud</small>
+            </h1>
+
+            <div id="article"></div>
+
+
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+                <li class="page-item">
+                    <a class="page-link" href="#">&larr; Plus anciens</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Plus récents &rarr;</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Search Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Recherche</h5>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Rechercher...">
+                        <span class="input-group-btn">
+                <button class="btn btn-success" type="button">OK</button>
+              </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Catégories</h5>
+                <div class="card-body">
+                    <div class="row" id="categorie">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Widget</h5>
+                <div class="card-body">
+                    Ne ratez plus rien sur les informations de l'école. Suivez nous à temps réel pour vous actualiser. <br><br>
+                    <b style="padding: 3px" class="badge-success">#ESP News</b>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+
+        <p class="m-0 text-center text-white">
+            <img src="img/logo.jpg" style="max-width:70px;" class="rounded-circle">
+            Copyright &copy; ESP News 2019
+        </p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
 </body>
+
 </html>
